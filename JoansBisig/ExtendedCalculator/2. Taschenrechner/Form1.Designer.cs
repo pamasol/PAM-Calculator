@@ -51,8 +51,8 @@
             this.eingabefeld = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zwischenspeicher = new System.Windows.Forms.Label();
             this.platzhalter = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -333,17 +333,17 @@
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.infoToolStripMenuItem.Text = "Info";
             // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.historyToolStripMenuItem.Text = "History";
-            // 
             // extendandCalculatorMadeByJonasBisigToolStripMenuItem
             // 
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem.Name = "extendandCalculatorMadeByJonasBisigToolStripMenuItem";
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem.Text = "Extendand calculator made by Jonas Bisig";
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
             // 
             // zwischenspeicher
             // 

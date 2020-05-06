@@ -15,7 +15,6 @@ namespace _2.Taschenrechner
         float input1 = 0;
         float input2;
         float output;
-        float inputisminus;
         int opperator; //1:plus 2:minus 3:mal 4:geteilt
 
         public calculator()
@@ -104,20 +103,27 @@ namespace _2.Taschenrechner
         {
             if (eingabefeld.ReadOnly == false)
             {
-                eingabefeld.Text = eingabefeld.Text + "0";
+                if (eingabefeld.Text != "")
+                {
+                    eingabefeld.Text = eingabefeld.Text + "0";
+                }
             }
         }
 
         private void plusminus_Click(object sender, EventArgs e) //Eingabe Plus oder Minus
         {
-            float.TryParse(eingabefeld.Text, out input1);
-            if(input1 > 0)
+            if (eingabefeld.ReadOnly == false)
             {
-                eingabefeld.Text = "-" + eingabefeld.Text;
-            }else
-            {
-                input1 = input1 * -1;
-                eingabefeld.Text = input1.ToString();
+
+                float.TryParse(eingabefeld.Text, out input2);
+                //if(input1 > 0)
+                //{
+                //eingabefeld.Text = "-" + eingabefeld.Text;
+                //}else
+                //{
+                input2 = input2 * -1;
+                eingabefeld.Text = input2.ToString();
+                //}
             }
         }
 
@@ -136,28 +142,36 @@ namespace _2.Taschenrechner
         {
             if (eingabefeld.ReadOnly == false)
             {
-                eingabefeld.Text = eingabefeld.Text + ".";
+                if (eingabefeld.Text == "")
+                {
+                    eingabefeld.Text = eingabefeld.Text + "0.";
+                }
+                else
+                {
+                    eingabefeld.Text = eingabefeld.Text + ".";
+                }
             }
         }
 
         private void gleich_Click(object sender, EventArgs e) //Ausrechnen
         {
             float.TryParse(eingabefeld.Text, out input2);
-            if(opperator == 1)                                //Plus
+            if (opperator == 1)                                //Plus
             {
-                output = input1 + input2;
+                output = (input1) + (input2);
                 eingabefeld.Text = output.ToString();
                 zwischenspeicher.Text = "";
                 eingabefeld.ReadOnly = true;
-            }else if(opperator == 2)                          //Minus
+            }
+            else if (opperator == 2)                          //Minus
             {
-                output = input1 - input2;
+                output = (input1) - (input2);
                 eingabefeld.Text = output.ToString();
                 zwischenspeicher.Text = "";
                 eingabefeld.ReadOnly = true;
 
             }
-            else if(opperator == 3)                           //Mal
+            else if (opperator == 3)                           //Mal
             {
                 output = input1 * input2;
                 eingabefeld.Text = output.ToString();
@@ -165,7 +179,7 @@ namespace _2.Taschenrechner
                 eingabefeld.ReadOnly = true;
 
             }
-            else if(opperator == 4)                           //Geteilt
+            else if (opperator == 4)                           //Geteilt
             {
                 output = input1 / input2;
                 eingabefeld.Text = output.ToString();
