@@ -55,6 +55,16 @@
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zwischenspeicher = new System.Windows.Forms.Label();
             this.platzhalter = new System.Windows.Forms.Button();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox8 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox9 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -341,6 +351,17 @@
             // 
             // historyToolStripMenuItem
             // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripTextBox2,
+            this.toolStripTextBox3,
+            this.toolStripTextBox4,
+            this.toolStripTextBox5,
+            this.toolStripTextBox6,
+            this.toolStripTextBox7,
+            this.toolStripTextBox8,
+            this.toolStripTextBox9,
+            this.toolStripTextBox10});
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.historyToolStripMenuItem.Text = "History";
@@ -364,6 +385,107 @@
             this.platzhalter.Size = new System.Drawing.Size(50, 50);
             this.platzhalter.TabIndex = 27;
             this.platzhalter.UseVisualStyleBackColor = false;
+            this.platzhalter.Click += new System.EventHandler(this.platzhalter_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox1.Visible = false;
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.ReadOnly = true;
+            this.toolStripTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox2.Visible = false;
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.ReadOnly = true;
+            this.toolStripTextBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox3.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox3.Visible = false;
+            // 
+            // toolStripTextBox4
+            // 
+            this.toolStripTextBox4.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.ReadOnly = true;
+            this.toolStripTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox4.Visible = false;
+            // 
+            // toolStripTextBox5
+            // 
+            this.toolStripTextBox5.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox5.Name = "toolStripTextBox5";
+            this.toolStripTextBox5.ReadOnly = true;
+            this.toolStripTextBox5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox5.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox5.Visible = false;
+            // 
+            // toolStripTextBox6
+            // 
+            this.toolStripTextBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox6.Name = "toolStripTextBox6";
+            this.toolStripTextBox6.ReadOnly = true;
+            this.toolStripTextBox6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox6.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox6.Visible = false;
+            // 
+            // toolStripTextBox7
+            // 
+            this.toolStripTextBox7.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox7.Name = "toolStripTextBox7";
+            this.toolStripTextBox7.ReadOnly = true;
+            this.toolStripTextBox7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox7.Visible = false;
+            // 
+            // toolStripTextBox8
+            // 
+            this.toolStripTextBox8.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox8.Name = "toolStripTextBox8";
+            this.toolStripTextBox8.ReadOnly = true;
+            this.toolStripTextBox8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox8.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox8.Visible = false;
+            // 
+            // toolStripTextBox9
+            // 
+            this.toolStripTextBox9.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.toolStripTextBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox9.Name = "toolStripTextBox9";
+            this.toolStripTextBox9.ReadOnly = true;
+            this.toolStripTextBox9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox9.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox9.Visible = false;
+            // 
+            // toolStripTextBox10
+            // 
+            this.toolStripTextBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox10.Name = "toolStripTextBox10";
+            this.toolStripTextBox10.ReadOnly = true;
+            this.toolStripTextBox10.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripTextBox10.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox10.Visible = false;
+            this.toolStripTextBox10.Click += new System.EventHandler(this.toolStripTextBox10_Click);
             // 
             // calculator
             // 
@@ -435,6 +557,16 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.Label zwischenspeicher;
         private System.Windows.Forms.Button platzhalter;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox10;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox9;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox8;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox7;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 
