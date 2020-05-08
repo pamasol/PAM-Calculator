@@ -33,6 +33,10 @@
     * `labelEqual` for the =
     * `labelResult` for the area where the result will appear
 
+We recommend switching the properties from the categorized view to alphabetical order. See screenshot below (first 2 icons in the Properties window), you'll find properties faster. Name is the name of the control, Text is what is written on the control. This logically implies that we can have multiple controls with the same text on a form, but they have to have different names.
+
+![Edit items of comboBox](Documentation_Source/windows_forms_name.png)
+
 3. `comboBoxOperation` is a drop-down list with several predefined items. Click right on the form and then **Edit items...**. Now you can put in the operation modes as shown in the screenshot below.
 
 ![Edit items of comboBox](Documentation_Source/properties_comboBox.png)
