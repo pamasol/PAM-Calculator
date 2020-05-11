@@ -52,9 +52,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zwischenspeicher = new System.Windows.Forms.Label();
-            this.platzhalter = new System.Windows.Forms.Button();
+            this.history = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
@@ -65,6 +63,12 @@
             this.toolStripTextBox8 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox9 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
+            this.zwischenspeicher = new System.Windows.Forms.Label();
+            this.Wurzel = new System.Windows.Forms.Button();
+            this.Quadrieren = new System.Windows.Forms.Button();
+            this.Pi = new System.Windows.Forms.Button();
+            this.einsdurchx = new System.Windows.Forms.Button();
+            this.yhochx = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             this.seven.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.seven.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.seven.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seven.Location = new System.Drawing.Point(28, 166);
+            this.seven.Location = new System.Drawing.Point(28, 222);
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(50, 50);
             this.seven.TabIndex = 4;
@@ -86,7 +90,7 @@
             this.four.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.four.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.four.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.four.Location = new System.Drawing.Point(28, 222);
+            this.four.Location = new System.Drawing.Point(28, 278);
             this.four.Name = "four";
             this.four.Size = new System.Drawing.Size(50, 50);
             this.four.TabIndex = 5;
@@ -99,7 +103,7 @@
             this.one.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.one.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.one.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.one.Location = new System.Drawing.Point(28, 278);
+            this.one.Location = new System.Drawing.Point(28, 334);
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(50, 50);
             this.one.TabIndex = 6;
@@ -112,7 +116,7 @@
             this.plusminus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.plusminus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.plusminus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plusminus.Location = new System.Drawing.Point(28, 334);
+            this.plusminus.Location = new System.Drawing.Point(28, 390);
             this.plusminus.Name = "plusminus";
             this.plusminus.Size = new System.Drawing.Size(50, 50);
             this.plusminus.TabIndex = 7;
@@ -125,7 +129,7 @@
             this.AC.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AC.Location = new System.Drawing.Point(84, 110);
+            this.AC.Location = new System.Drawing.Point(140, 110);
             this.AC.Name = "AC";
             this.AC.Size = new System.Drawing.Size(50, 50);
             this.AC.TabIndex = 9;
@@ -138,7 +142,7 @@
             this.C.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.C.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.C.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.C.Location = new System.Drawing.Point(140, 110);
+            this.C.Location = new System.Drawing.Point(196, 110);
             this.C.Name = "C";
             this.C.Size = new System.Drawing.Size(50, 50);
             this.C.TabIndex = 10;
@@ -151,7 +155,7 @@
             this.geteilt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.geteilt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.geteilt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.geteilt.Location = new System.Drawing.Point(196, 110);
+            this.geteilt.Location = new System.Drawing.Point(196, 166);
             this.geteilt.Name = "geteilt";
             this.geteilt.Size = new System.Drawing.Size(50, 50);
             this.geteilt.TabIndex = 11;
@@ -164,7 +168,7 @@
             this.mal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.mal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mal.Location = new System.Drawing.Point(196, 166);
+            this.mal.Location = new System.Drawing.Point(196, 222);
             this.mal.Name = "mal";
             this.mal.Size = new System.Drawing.Size(50, 50);
             this.mal.TabIndex = 12;
@@ -177,7 +181,7 @@
             this.nine.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.nine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.nine.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nine.Location = new System.Drawing.Point(140, 166);
+            this.nine.Location = new System.Drawing.Point(140, 222);
             this.nine.Name = "nine";
             this.nine.Size = new System.Drawing.Size(50, 50);
             this.nine.TabIndex = 13;
@@ -190,7 +194,7 @@
             this.six.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.six.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.six.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.six.Location = new System.Drawing.Point(140, 222);
+            this.six.Location = new System.Drawing.Point(140, 278);
             this.six.Name = "six";
             this.six.Size = new System.Drawing.Size(50, 50);
             this.six.TabIndex = 14;
@@ -203,7 +207,7 @@
             this.minus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.minus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minus.Location = new System.Drawing.Point(196, 222);
+            this.minus.Location = new System.Drawing.Point(196, 278);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(50, 50);
             this.minus.TabIndex = 15;
@@ -216,7 +220,7 @@
             this.five.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.five.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.five.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.five.Location = new System.Drawing.Point(84, 222);
+            this.five.Location = new System.Drawing.Point(84, 278);
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(50, 50);
             this.five.TabIndex = 16;
@@ -229,7 +233,7 @@
             this.eight.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.eight.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.eight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eight.Location = new System.Drawing.Point(84, 166);
+            this.eight.Location = new System.Drawing.Point(84, 222);
             this.eight.Name = "eight";
             this.eight.Size = new System.Drawing.Size(50, 50);
             this.eight.TabIndex = 17;
@@ -242,7 +246,7 @@
             this.two.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.two.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.two.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.two.Location = new System.Drawing.Point(84, 278);
+            this.two.Location = new System.Drawing.Point(84, 334);
             this.two.Name = "two";
             this.two.Size = new System.Drawing.Size(50, 50);
             this.two.TabIndex = 18;
@@ -255,7 +259,7 @@
             this.three.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.three.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.three.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.three.Location = new System.Drawing.Point(140, 278);
+            this.three.Location = new System.Drawing.Point(140, 334);
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(50, 50);
             this.three.TabIndex = 19;
@@ -268,7 +272,7 @@
             this.zero.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.zero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.zero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zero.Location = new System.Drawing.Point(84, 334);
+            this.zero.Location = new System.Drawing.Point(84, 390);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(50, 50);
             this.zero.TabIndex = 20;
@@ -281,7 +285,7 @@
             this.comma.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.comma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comma.Location = new System.Drawing.Point(140, 334);
+            this.comma.Location = new System.Drawing.Point(140, 390);
             this.comma.Name = "comma";
             this.comma.Size = new System.Drawing.Size(50, 50);
             this.comma.TabIndex = 21;
@@ -294,7 +298,7 @@
             this.gleich.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gleich.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gleich.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gleich.Location = new System.Drawing.Point(196, 334);
+            this.gleich.Location = new System.Drawing.Point(196, 390);
             this.gleich.Name = "gleich";
             this.gleich.Size = new System.Drawing.Size(50, 50);
             this.gleich.TabIndex = 22;
@@ -307,7 +311,7 @@
             this.plus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.plus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plus.Location = new System.Drawing.Point(196, 278);
+            this.plus.Location = new System.Drawing.Point(196, 334);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(50, 50);
             this.plus.TabIndex = 23;
@@ -328,7 +332,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.infoToolStripMenuItem,
-            this.historyToolStripMenuItem});
+            this.history});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(267, 24);
@@ -349,9 +353,9 @@
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
             this.extendandCalculatorMadeByJonasBisigToolStripMenuItem.Text = "Extendand calculator made by Jonas Bisig";
             // 
-            // historyToolStripMenuItem
+            // history
             // 
-            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.history.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1,
             this.toolStripTextBox2,
             this.toolStripTextBox3,
@@ -362,30 +366,9 @@
             this.toolStripTextBox8,
             this.toolStripTextBox9,
             this.toolStripTextBox10});
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.historyToolStripMenuItem.Text = "History";
-            // 
-            // zwischenspeicher
-            // 
-            this.zwischenspeicher.AutoSize = true;
-            this.zwischenspeicher.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zwischenspeicher.Location = new System.Drawing.Point(24, 39);
-            this.zwischenspeicher.Name = "zwischenspeicher";
-            this.zwischenspeicher.Size = new System.Drawing.Size(0, 24);
-            this.zwischenspeicher.TabIndex = 26;
-            // 
-            // platzhalter
-            // 
-            this.platzhalter.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.platzhalter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.platzhalter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.platzhalter.Location = new System.Drawing.Point(28, 110);
-            this.platzhalter.Name = "platzhalter";
-            this.platzhalter.Size = new System.Drawing.Size(50, 50);
-            this.platzhalter.TabIndex = 27;
-            this.platzhalter.UseVisualStyleBackColor = false;
-            this.platzhalter.Click += new System.EventHandler(this.platzhalter_Click);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(57, 20);
+            this.history.Text = "History";
             // 
             // toolStripTextBox1
             // 
@@ -396,6 +379,7 @@
             this.toolStripTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox1.Visible = false;
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // toolStripTextBox2
             // 
@@ -406,6 +390,7 @@
             this.toolStripTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox2.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox2.Visible = false;
+            this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
             // 
             // toolStripTextBox3
             // 
@@ -416,6 +401,7 @@
             this.toolStripTextBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox3.Visible = false;
+            this.toolStripTextBox3.Click += new System.EventHandler(this.toolStripTextBox3_Click);
             // 
             // toolStripTextBox4
             // 
@@ -426,6 +412,7 @@
             this.toolStripTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox4.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox4.Visible = false;
+            this.toolStripTextBox4.Click += new System.EventHandler(this.toolStripTextBox4_Click);
             // 
             // toolStripTextBox5
             // 
@@ -436,6 +423,7 @@
             this.toolStripTextBox5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox5.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox5.Visible = false;
+            this.toolStripTextBox5.Click += new System.EventHandler(this.toolStripTextBox5_Click);
             // 
             // toolStripTextBox6
             // 
@@ -446,6 +434,7 @@
             this.toolStripTextBox6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox6.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox6.Visible = false;
+            this.toolStripTextBox6.Click += new System.EventHandler(this.toolStripTextBox6_Click);
             // 
             // toolStripTextBox7
             // 
@@ -456,6 +445,7 @@
             this.toolStripTextBox7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox7.Visible = false;
+            this.toolStripTextBox7.Click += new System.EventHandler(this.toolStripTextBox7_Click);
             // 
             // toolStripTextBox8
             // 
@@ -466,6 +456,7 @@
             this.toolStripTextBox8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox8.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox8.Visible = false;
+            this.toolStripTextBox8.Click += new System.EventHandler(this.toolStripTextBox8_Click);
             // 
             // toolStripTextBox9
             // 
@@ -476,6 +467,7 @@
             this.toolStripTextBox9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripTextBox9.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox9.Visible = false;
+            this.toolStripTextBox9.Click += new System.EventHandler(this.toolStripTextBox9_Click);
             // 
             // toolStripTextBox10
             // 
@@ -487,12 +479,90 @@
             this.toolStripTextBox10.Visible = false;
             this.toolStripTextBox10.Click += new System.EventHandler(this.toolStripTextBox10_Click);
             // 
+            // zwischenspeicher
+            // 
+            this.zwischenspeicher.AutoSize = true;
+            this.zwischenspeicher.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zwischenspeicher.Location = new System.Drawing.Point(24, 39);
+            this.zwischenspeicher.Name = "zwischenspeicher";
+            this.zwischenspeicher.Size = new System.Drawing.Size(0, 24);
+            this.zwischenspeicher.TabIndex = 26;
+            // 
+            // Wurzel
+            // 
+            this.Wurzel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Wurzel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Wurzel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wurzel.Location = new System.Drawing.Point(140, 166);
+            this.Wurzel.Name = "Wurzel";
+            this.Wurzel.Size = new System.Drawing.Size(50, 50);
+            this.Wurzel.TabIndex = 29;
+            this.Wurzel.Text = "√ ";
+            this.Wurzel.UseVisualStyleBackColor = false;
+            this.Wurzel.Click += new System.EventHandler(this.Wurzel_Click);
+            // 
+            // Quadrieren
+            // 
+            this.Quadrieren.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Quadrieren.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Quadrieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quadrieren.Location = new System.Drawing.Point(84, 166);
+            this.Quadrieren.Name = "Quadrieren";
+            this.Quadrieren.Size = new System.Drawing.Size(50, 50);
+            this.Quadrieren.TabIndex = 31;
+            this.Quadrieren.Text = "x²";
+            this.Quadrieren.UseVisualStyleBackColor = false;
+            this.Quadrieren.Click += new System.EventHandler(this.Quadrieren_Click);
+            // 
+            // Pi
+            // 
+            this.Pi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Pi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Pi.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pi.Location = new System.Drawing.Point(28, 166);
+            this.Pi.Name = "Pi";
+            this.Pi.Size = new System.Drawing.Size(50, 50);
+            this.Pi.TabIndex = 32;
+            this.Pi.Text = "π";
+            this.Pi.UseVisualStyleBackColor = false;
+            this.Pi.Click += new System.EventHandler(this.Pi_Click);
+            // 
+            // einsdurchx
+            // 
+            this.einsdurchx.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.einsdurchx.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.einsdurchx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.einsdurchx.Location = new System.Drawing.Point(84, 110);
+            this.einsdurchx.Name = "einsdurchx";
+            this.einsdurchx.Size = new System.Drawing.Size(50, 50);
+            this.einsdurchx.TabIndex = 34;
+            this.einsdurchx.Text = "1/x";
+            this.einsdurchx.UseVisualStyleBackColor = false;
+            this.einsdurchx.Click += new System.EventHandler(this.einsdurchx_Click);
+            // 
+            // yhochx
+            // 
+            this.yhochx.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.yhochx.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.yhochx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yhochx.Image = global::_2.Taschenrechner.Properties.Resources.y_hoch_x1;
+            this.yhochx.Location = new System.Drawing.Point(27, 110);
+            this.yhochx.Name = "yhochx";
+            this.yhochx.Size = new System.Drawing.Size(50, 50);
+            this.yhochx.TabIndex = 35;
+            this.yhochx.UseVisualStyleBackColor = false;
+            this.yhochx.Click += new System.EventHandler(this.yhochx_Click_1);
+            // 
             // calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 410);
-            this.Controls.Add(this.platzhalter);
+            this.ClientSize = new System.Drawing.Size(267, 448);
+            this.Controls.Add(this.yhochx);
+            this.Controls.Add(this.einsdurchx);
+            this.Controls.Add(this.Pi);
+            this.Controls.Add(this.Quadrieren);
+            this.Controls.Add(this.Wurzel);
             this.Controls.Add(this.zwischenspeicher);
             this.Controls.Add(this.eingabefeld);
             this.Controls.Add(this.plus);
@@ -554,9 +624,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem extendandCalculatorMadeByJonasBisigToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem history;
         private System.Windows.Forms.Label zwischenspeicher;
-        private System.Windows.Forms.Button platzhalter;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox10;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox9;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox8;
@@ -567,6 +636,11 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.Button Wurzel;
+        private System.Windows.Forms.Button Quadrieren;
+        private System.Windows.Forms.Button Pi;
+        private System.Windows.Forms.Button einsdurchx;
+        private System.Windows.Forms.Button yhochx;
     }
 }
 

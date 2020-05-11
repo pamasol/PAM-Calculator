@@ -89,5 +89,14 @@
   <ItemGroup>
     <None Include="Resources\Zurück-Zeichen2.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\potenzieren_taschenrechner_011.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y hoch x.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y hoch x1.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +13,10 @@ namespace _2.Taschenrechner
 {
     public partial class calculator : Form
     {
-        float input1 = 0;
-        float input2;
-        float output;
-        int opperator = 0; //1:plus 2:minus 3:mal 4:geteilt
+        double input1 = 0;
+        double input2;
+        double output;
+        int opperator = 0; //1:plus 2:minus 3:mal 4:geteilt 5:y hoch x
 
         public calculator()
         {
@@ -115,7 +116,7 @@ namespace _2.Taschenrechner
             if (eingabefeld.ReadOnly == false)
             {
 
-                float.TryParse(eingabefeld.Text, out input2);
+                input2 = Convert.ToDouble(eingabefeld.Text);
 
                 input2 = input2 * -1;
                 eingabefeld.Text = input2.ToString();
@@ -124,16 +125,17 @@ namespace _2.Taschenrechner
 
         private void plus_Click(object sender, EventArgs e) //Operator Plus definieren und Eingabe zwischenspeichern
         {
+            eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                float.TryParse(eingabefeld.Text, out input1);
+                input1 = Convert.ToDouble(eingabefeld.Text);
                 zwischenspeicher.Text = input1.ToString() + "+";
                 opperator = 1;
                 eingabefeld.Text = "";
             }
             else
             {
-                float.TryParse(eingabefeld.Text, out input2);
+                input2 = Convert.ToDouble(eingabefeld.Text);
                 switch (opperator)
                 {
                     case 1:
@@ -153,6 +155,11 @@ namespace _2.Taschenrechner
                         break;
                     case 4:
                         input1 = input1 / input2;
+                        zwischenspeicher.Text = input1 + "+";
+                        eingabefeld.Text = "";
+                        break;
+                    case 5:
+                        input1 = Math.Pow(input1, input2);
                         zwischenspeicher.Text = input1 + "+";
                         eingabefeld.Text = "";
                         break;
@@ -176,9 +183,9 @@ namespace _2.Taschenrechner
             }
         }
 
-        private void gleich_Click(object sender, EventArgs e) //Ausrechnen
+        private void gleich_Click(object sender, EventArgs e)  //Ausrechnen
         {
-            float.TryParse(eingabefeld.Text, out input2);
+            input2 = Convert.ToDouble(eingabefeld.Text);
             if (opperator == 1)                                //Plus
             {
                 output = (input1) + (input2);
@@ -186,7 +193,7 @@ namespace _2.Taschenrechner
                 zwischenspeicher.Text = "";
                 eingabefeld.ReadOnly = true;
             }
-            else if (opperator == 2)                          //Minus
+            else if (opperator == 2)                           //Minus
             {
                 output = (input1) - (input2);
                 eingabefeld.Text = output.ToString();
@@ -210,10 +217,18 @@ namespace _2.Taschenrechner
                 eingabefeld.ReadOnly = true;
 
             }
-
-            History:
-
-            if (toolStripTextBox1.Text == "")                  //History
+            else if (opperator == 5)
+            {
+                output = Math.Pow(input1, input2);
+                eingabefeld.Text = output.ToString();
+                zwischenspeicher.Text = "";
+                eingabefeld.ReadOnly = true;
+            }
+            History();
+        }
+        public void History()                                  //History
+        {
+            if (toolStripTextBox1.Text == "")                  
             {
                 toolStripTextBox1.Text = output.ToString();
                 toolStripTextBox1.Visible = true;
@@ -247,6 +262,7 @@ namespace _2.Taschenrechner
                 toolStripTextBox6.Text = output.ToString();
                 toolStripTextBox6.Visible = true;
 
+
             }
             else if (toolStripTextBox7.Text == "")
             {
@@ -272,6 +288,18 @@ namespace _2.Taschenrechner
                 toolStripTextBox10.Visible = true;
 
             }else
+            {
+                toolStripTextBox1.Text = toolStripTextBox2.Text;
+                toolStripTextBox2.Text = toolStripTextBox3.Text;
+                toolStripTextBox3.Text = toolStripTextBox4.Text;
+                toolStripTextBox4.Text = toolStripTextBox5.Text;
+                toolStripTextBox5.Text = toolStripTextBox6.Text;
+                toolStripTextBox6.Text = toolStripTextBox7.Text;
+                toolStripTextBox7.Text = toolStripTextBox8.Text;
+                toolStripTextBox8.Text = toolStripTextBox9.Text;
+                toolStripTextBox9.Text = toolStripTextBox10.Text;
+                toolStripTextBox10.Text = output.ToString();
+            }
 
 
         }
@@ -281,28 +309,48 @@ namespace _2.Taschenrechner
             zwischenspeicher.Text = "";
             eingabefeld.Text = "";
             eingabefeld.ReadOnly = false;
+
+            toolStripTextBox1.Text = "";
+            toolStripTextBox1.Visible = false;
+            toolStripTextBox2.Text = "";
+            toolStripTextBox2.Visible = false;
+            toolStripTextBox3.Text = "";
+            toolStripTextBox3.Visible = false;
+            toolStripTextBox4.Text = "";
+            toolStripTextBox4.Visible = false;
+            toolStripTextBox5.Text = "";
+            toolStripTextBox5.Visible = false;
+            toolStripTextBox6.Text = "";
+            toolStripTextBox6.Visible = false;
+            toolStripTextBox7.Text = "";
+            toolStripTextBox7.Visible = false;
+            toolStripTextBox8.Text = "";
+            toolStripTextBox8.Visible = false;
+            toolStripTextBox9.Text = "";
+            toolStripTextBox9.Visible = false;
+            toolStripTextBox10.Text = "";
+            toolStripTextBox10.Visible = false;
         }
 
         private void C_Click(object sender, EventArgs e) //Eingabefeld löschen
         {
-            if (eingabefeld.ReadOnly == false)
-            {
-                eingabefeld.Text = "";
-            }
+            eingabefeld.Text = "";
+            eingabefeld.ReadOnly = false;
         }
 
         private void minus_Click(object sender, EventArgs e) //Operator Minus definieren und Eingabe zwischenspeichern
         {
+            eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                float.TryParse(eingabefeld.Text, out input1);
+                input1 = Convert.ToDouble(eingabefeld.Text);
                 zwischenspeicher.Text = input1.ToString() + "-";
                 opperator = 2;
                 eingabefeld.Text = "";
             }
             else
             {
-                float.TryParse(eingabefeld.Text, out input2);
+                input2 = Convert.ToDouble(eingabefeld.Text);
                 switch (opperator)
                 {
                     case 1:
@@ -322,33 +370,34 @@ namespace _2.Taschenrechner
                         break;
                     case 4:
                         input1 = input1 / input2;
+                        zwischenspeicher.Text = input1 + "-";
+                        eingabefeld.Text = "";
+                        break;
+                    case 5:
+                        input1 = Math.Pow(input1, input2);
                         zwischenspeicher.Text = input1 + "-";
                         eingabefeld.Text = "";
                         break;
                 }
 
                 opperator = 2;
-               /*float.TryParse(eingabefeld.Text, out input2);
-
-                input1 = input1 - input2;
-                zwischenspeicher.Text = input1.ToString() + "-";
-                eingabefeld.Text = "";*/
             }
-
+            
         }
 
         private void mal_Click(object sender, EventArgs e) //Operator Mal definieren und Eingabe zwischenspeichern
         {
+            eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                float.TryParse(eingabefeld.Text, out input1);
+                input1 = Convert.ToDouble(eingabefeld.Text);
                 zwischenspeicher.Text = input1.ToString() + "⋅";
                 opperator = 3;
                 eingabefeld.Text = "";
             }
             else
             {
-                float.TryParse(eingabefeld.Text, out input2);
+                input2 = Convert.ToDouble(eingabefeld.Text);
                 switch (opperator)
                 {
                     case 1:
@@ -368,6 +417,11 @@ namespace _2.Taschenrechner
                         break;
                     case 4:
                         input1 = input1 / input2;
+                        zwischenspeicher.Text = input1 + "⋅";
+                        eingabefeld.Text = "";
+                        break;
+                    case 5:
+                        input1 = Math.Pow(input1, input2);
                         zwischenspeicher.Text = input1 + "⋅";
                         eingabefeld.Text = "";
                         break;
@@ -380,16 +434,17 @@ namespace _2.Taschenrechner
 
         private void geteilt_Click(object sender, EventArgs e) //Operator Geteilt definieren und Eingabe zwischenspeichern
         {
+            eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                float.TryParse(eingabefeld.Text, out input1);
+                input1 = Convert.ToDouble(eingabefeld.Text);
                 zwischenspeicher.Text = input1.ToString() + "÷";
                 opperator = 4;
                 eingabefeld.Text = "";
             }
             else
             {
-                float.TryParse(eingabefeld.Text, out input2);
+                input2 = Convert.ToDouble(eingabefeld.Text);
                 switch (opperator)
                 {
                     case 1:
@@ -412,6 +467,11 @@ namespace _2.Taschenrechner
                         zwischenspeicher.Text = input1 + "÷";
                         eingabefeld.Text = "";
                         break;
+                    case 5:
+                        input1 = Math.Pow(input1, input2);
+                        zwischenspeicher.Text = input1 + "÷";
+                        eingabefeld.Text = "";
+                        break;
                 }
 
                 opperator = 4;
@@ -419,14 +479,154 @@ namespace _2.Taschenrechner
 
         }
 
-        private void platzhalter_Click(object sender, EventArgs e)
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox1.Text;
+            eingabefeld.ReadOnly = false;
+        }
 
+        private void toolStripTextBox2_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox2.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox3_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox3.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox4_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox4.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox5_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox5.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox6_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox6.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox7_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox7.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox8_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox8.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void toolStripTextBox9_Click(object sender, EventArgs e)
+        {
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox9.Text;
+            eingabefeld.ReadOnly = false;
         }
 
         private void toolStripTextBox10_Click(object sender, EventArgs e)
         {
-            
+            history.HideDropDown();
+            eingabefeld.Text = toolStripTextBox10.Text;
+            eingabefeld.ReadOnly = false;
+        }
+
+        private void Wurzel_Click(object sender, EventArgs e)
+        {
+            double resultatwurzel;
+            resultatwurzel = Convert.ToDouble(eingabefeld.Text);
+            resultatwurzel = Math.Sqrt(resultatwurzel);
+            eingabefeld.Text = resultatwurzel.ToString();
+            eingabefeld.ReadOnly = true;
+            output = Convert.ToSingle(resultatwurzel);
+            History();
+        }
+
+        private void Pi_Click(object sender, EventArgs e)
+        {
+            eingabefeld.ReadOnly = false;
+            eingabefeld.Text = Math.PI.ToString();
+        }
+
+        private void Quadrieren_Click(object sender, EventArgs e)
+        {
+            output = Convert.ToDouble(eingabefeld.Text);
+            output = output * output;
+            eingabefeld.Text = output.ToString();
+            History();
+        }
+
+        private void yhochx_Click_1(object sender, EventArgs e)
+        {
+            eingabefeld.ReadOnly = false;
+            if (zwischenspeicher.Text == "")
+            {
+                input1 = Convert.ToDouble(eingabefeld.Text);
+                zwischenspeicher.Text = input1.ToString() + "x^y";
+                opperator = 5;
+                eingabefeld.Text = "";
+            }
+            else
+            {
+                input2 = Convert.ToDouble(eingabefeld.Text);
+                switch (opperator)
+                {
+                    case 1:
+                        input1 = input1 + input2;
+                        zwischenspeicher.Text = input1 + "x^y";
+                        eingabefeld.Text = "";
+                        break;
+                    case 2:
+                        input1 = input1 - input2;
+                        zwischenspeicher.Text = input1 + "x^y";
+                        eingabefeld.Text = "";
+                        break;
+                    case 3:
+                        input1 = input1 * input2;
+                        zwischenspeicher.Text = input1 + "x^y";
+                        eingabefeld.Text = "";
+                        break;
+                    case 4:
+                        input1 = input1 / input2;
+                        zwischenspeicher.Text = input1 + "x^y";
+                        eingabefeld.Text = "";
+                        break;
+                    case 5:
+                        input1 = Math.Pow(input1, input2);
+                        zwischenspeicher.Text = input1 + "x^y";
+                        eingabefeld.Text = "";
+                        break;
+                }
+
+                opperator = 5;
+            }
+
+        }
+
+        private void einsdurchx_Click(object sender, EventArgs e)
+        {
+            output = Convert.ToDouble(eingabefeld.Text);
+            output = 1 / output;
+            eingabefeld.Text = output.ToString();
+            History();
         }
     }
 }
