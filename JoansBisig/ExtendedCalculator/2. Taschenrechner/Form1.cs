@@ -113,7 +113,7 @@ namespace _2.Taschenrechner
 
         private void plusminus_Click(object sender, EventArgs e) //Eingabe Plus oder Minus
         {
-            if (eingabefeld.ReadOnly == false)
+            if (eingabefeld.ReadOnly == false && eingabefeld.Text != "")
             {
 
                 input2 = Convert.ToDouble(eingabefeld.Text);
@@ -128,14 +128,31 @@ namespace _2.Taschenrechner
             eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                input1 = Convert.ToDouble(eingabefeld.Text);
-                zwischenspeicher.Text = input1.ToString() + "+";
-                opperator = 1;
-                eingabefeld.Text = "";
+                if (eingabefeld.Text == "")
+                {
+                    input1 = 0;
+                    zwischenspeicher.Text = input1.ToString() + "+";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
+                else
+                {
+                    input1 = Convert.ToDouble(eingabefeld.Text);
+                    zwischenspeicher.Text = input1.ToString() + "+";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
             }
             else
             {
-                input2 = Convert.ToDouble(eingabefeld.Text);
+                if (eingabefeld.Text == "")
+                {
+                    input2 = 0;
+                }
+                else
+                {
+                    input2 = Convert.ToDouble(eingabefeld.Text);
+                }
                 switch (opperator)
                 {
                     case 1:
@@ -185,46 +202,53 @@ namespace _2.Taschenrechner
 
         private void gleich_Click(object sender, EventArgs e)  //Ausrechnen
         {
-            input2 = Convert.ToDouble(eingabefeld.Text);
-            if (opperator == 1)                                //Plus
+            if (eingabefeld.Text == "")
             {
-                output = (input1) + (input2);
-                eingabefeld.Text = output.ToString();
-                zwischenspeicher.Text = "";
-                eingabefeld.ReadOnly = true;
+                MessageBox.Show("Bitte zuerst Wert eingeben!");
             }
-            else if (opperator == 2)                           //Minus
+            else
             {
-                output = (input1) - (input2);
-                eingabefeld.Text = output.ToString();
-                zwischenspeicher.Text = "";
-                eingabefeld.ReadOnly = true;
+                input2 = Convert.ToDouble(eingabefeld.Text);
+                if (opperator == 1)                                //Plus
+                {
+                    output = (input1) + (input2);
+                    eingabefeld.Text = output.ToString();
+                    zwischenspeicher.Text = "";
+                    eingabefeld.ReadOnly = true;
+                }
+                else if (opperator == 2)                           //Minus
+                {
+                    output = (input1) - (input2);
+                    eingabefeld.Text = output.ToString();
+                    zwischenspeicher.Text = "";
+                    eingabefeld.ReadOnly = true;
 
-            }
-            else if (opperator == 3)                           //Mal
-            {
-                output = input1 * input2;
-                eingabefeld.Text = output.ToString();
-                zwischenspeicher.Text = "";
-                eingabefeld.ReadOnly = true;
+                }
+                else if (opperator == 3)                           //Mal
+                {
+                    output = input1 * input2;
+                    eingabefeld.Text = output.ToString();
+                    zwischenspeicher.Text = "";
+                    eingabefeld.ReadOnly = true;
 
-            }
-            else if (opperator == 4)                           //Geteilt
-            {
-                output = input1 / input2;
-                eingabefeld.Text = output.ToString();
-                zwischenspeicher.Text = "";
-                eingabefeld.ReadOnly = true;
+                }
+                else if (opperator == 4)                           //Geteilt
+                {
+                    output = input1 / input2;
+                    eingabefeld.Text = output.ToString();
+                    zwischenspeicher.Text = "";
+                    eingabefeld.ReadOnly = true;
 
+                }
+                else if (opperator == 5)
+                {
+                    output = Math.Pow(input1, input2);
+                    eingabefeld.Text = output.ToString();
+                    zwischenspeicher.Text = "";
+                    eingabefeld.ReadOnly = true;
+                }
+                History();
             }
-            else if (opperator == 5)
-            {
-                output = Math.Pow(input1, input2);
-                eingabefeld.Text = output.ToString();
-                zwischenspeicher.Text = "";
-                eingabefeld.ReadOnly = true;
-            }
-            History();
         }
         public void History()                                  //History
         {
@@ -343,14 +367,32 @@ namespace _2.Taschenrechner
             eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                input1 = Convert.ToDouble(eingabefeld.Text);
-                zwischenspeicher.Text = input1.ToString() + "-";
-                opperator = 2;
-                eingabefeld.Text = "";
+                if (eingabefeld.Text == "")
+                {
+                    input1 = 0;
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
+                else
+                {
+                    input1 = Convert.ToDouble(eingabefeld.Text);
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
+
             }
             else
             {
-                input2 = Convert.ToDouble(eingabefeld.Text);
+                if (eingabefeld.Text == "")
+                {
+                    input2 = 0;
+                }
+                else
+                {
+                    input2 = Convert.ToDouble(eingabefeld.Text);
+                }
                 switch (opperator)
                 {
                     case 1:
@@ -390,14 +432,31 @@ namespace _2.Taschenrechner
             eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                input1 = Convert.ToDouble(eingabefeld.Text);
-                zwischenspeicher.Text = input1.ToString() + "⋅";
-                opperator = 3;
-                eingabefeld.Text = "";
+                if (eingabefeld.Text == "")
+                {
+                    input1 = 0;
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
+                else
+                {
+                    input1 = Convert.ToDouble(eingabefeld.Text);
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
             }
             else
             {
-                input2 = Convert.ToDouble(eingabefeld.Text);
+                if (eingabefeld.Text == "")
+                {
+                    input2 = 0;
+                }
+                else
+                {
+                    input2 = Convert.ToDouble(eingabefeld.Text);
+                }
                 switch (opperator)
                 {
                     case 1:
@@ -437,14 +496,31 @@ namespace _2.Taschenrechner
             eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                input1 = Convert.ToDouble(eingabefeld.Text);
-                zwischenspeicher.Text = input1.ToString() + "÷";
-                opperator = 4;
-                eingabefeld.Text = "";
+                if (eingabefeld.Text == "")
+                {
+                    input1 = 0;
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
+                else
+                {
+                    input1 = Convert.ToDouble(eingabefeld.Text);
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
             }
             else
             {
-                input2 = Convert.ToDouble(eingabefeld.Text);
+                if (eingabefeld.Text == "")
+                {
+                    input2 = 0;
+                }
+                else
+                {
+                    input2 = Convert.ToDouble(eingabefeld.Text);
+                }
                 switch (opperator)
                 {
                     case 1:
@@ -551,13 +627,20 @@ namespace _2.Taschenrechner
 
         private void Wurzel_Click(object sender, EventArgs e)
         {
-            double resultatwurzel;
-            resultatwurzel = Convert.ToDouble(eingabefeld.Text);
-            resultatwurzel = Math.Sqrt(resultatwurzel);
-            eingabefeld.Text = resultatwurzel.ToString();
-            eingabefeld.ReadOnly = true;
-            output = Convert.ToSingle(resultatwurzel);
-            History();
+            if (eingabefeld.Text == "")
+            {
+                MessageBox.Show("Bitte zuerst Wert eingeben!");
+            }
+            else
+            {
+                double resultatwurzel;
+                resultatwurzel = Convert.ToDouble(eingabefeld.Text);
+                resultatwurzel = Math.Sqrt(resultatwurzel);
+                eingabefeld.Text = resultatwurzel.ToString();
+                eingabefeld.ReadOnly = true;
+                output = Convert.ToSingle(resultatwurzel);
+                History();
+            }
         }
 
         private void Pi_Click(object sender, EventArgs e)
@@ -568,10 +651,19 @@ namespace _2.Taschenrechner
 
         private void Quadrieren_Click(object sender, EventArgs e)
         {
-            output = Convert.ToDouble(eingabefeld.Text);
-            output = output * output;
-            eingabefeld.Text = output.ToString();
-            History();
+            if (eingabefeld.Text == "")
+            {
+                MessageBox.Show("Bitte zuerst Wert eingeben!");
+
+            }
+            else
+            {
+                output = Convert.ToDouble(eingabefeld.Text);
+                output = output * output;
+                eingabefeld.Text = output.ToString();
+                History();
+            }
+
         }
 
         private void yhochx_Click_1(object sender, EventArgs e)
@@ -579,14 +671,31 @@ namespace _2.Taschenrechner
             eingabefeld.ReadOnly = false;
             if (zwischenspeicher.Text == "")
             {
-                input1 = Convert.ToDouble(eingabefeld.Text);
-                zwischenspeicher.Text = input1.ToString() + "x^y";
-                opperator = 5;
-                eingabefeld.Text = "";
+                if (eingabefeld.Text == "")
+                {
+                    input1 = 0;
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
+                else
+                {
+                    input1 = Convert.ToDouble(eingabefeld.Text);
+                    zwischenspeicher.Text = input1.ToString() + "-";
+                    opperator = 2;
+                    eingabefeld.Text = "";
+                }
             }
             else
             {
-                input2 = Convert.ToDouble(eingabefeld.Text);
+                if (eingabefeld.Text == "")
+                {
+                    input2 = 0;
+                }
+                else
+                {
+                    input2 = Convert.ToDouble(eingabefeld.Text);
+                }
                 switch (opperator)
                 {
                     case 1:
@@ -623,10 +732,18 @@ namespace _2.Taschenrechner
 
         private void einsdurchx_Click(object sender, EventArgs e)
         {
-            output = Convert.ToDouble(eingabefeld.Text);
-            output = 1 / output;
-            eingabefeld.Text = output.ToString();
-            History();
+            if (eingabefeld.Text == "")
+            {
+                MessageBox.Show("Bitte zuerst Wert eingeben!");
+            }
+            else
+            {
+                output = Convert.ToDouble(eingabefeld.Text);
+                output = 1 / output;
+                eingabefeld.Text = output.ToString();
+                History();
+
+            }
         }
     }
 }
