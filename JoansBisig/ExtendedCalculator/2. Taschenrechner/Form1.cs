@@ -132,14 +132,14 @@ namespace _2.Taschenrechner
                 {
                     input1 = 0;
                     zwischenspeicher.Text = input1.ToString() + "+";
-                    opperator = 2;
+                    opperator = 1;
                     eingabefeld.Text = "";
                 }
                 else
                 {
                     input1 = Convert.ToDouble(eingabefeld.Text);
                     zwischenspeicher.Text = input1.ToString() + "+";
-                    opperator = 2;
+                    opperator = 1;
                     eingabefeld.Text = "";
                 }
             }
@@ -435,15 +435,15 @@ namespace _2.Taschenrechner
                 if (eingabefeld.Text == "")
                 {
                     input1 = 0;
-                    zwischenspeicher.Text = input1.ToString() + "-";
-                    opperator = 2;
+                    zwischenspeicher.Text = input1.ToString() + "⋅";
+                    opperator = 3;
                     eingabefeld.Text = "";
                 }
                 else
                 {
                     input1 = Convert.ToDouble(eingabefeld.Text);
-                    zwischenspeicher.Text = input1.ToString() + "-";
-                    opperator = 2;
+                    zwischenspeicher.Text = input1.ToString() + "⋅";
+                    opperator = 3;
                     eingabefeld.Text = "";
                 }
             }
@@ -499,15 +499,15 @@ namespace _2.Taschenrechner
                 if (eingabefeld.Text == "")
                 {
                     input1 = 0;
-                    zwischenspeicher.Text = input1.ToString() + "-";
-                    opperator = 2;
+                    zwischenspeicher.Text = input1.ToString() + "÷";
+                    opperator = 4;
                     eingabefeld.Text = "";
                 }
                 else
                 {
                     input1 = Convert.ToDouble(eingabefeld.Text);
-                    zwischenspeicher.Text = input1.ToString() + "-";
-                    opperator = 2;
+                    zwischenspeicher.Text = input1.ToString() + "÷";
+                    opperator = 4;
                     eingabefeld.Text = "";
                 }
             }
@@ -674,15 +674,15 @@ namespace _2.Taschenrechner
                 if (eingabefeld.Text == "")
                 {
                     input1 = 0;
-                    zwischenspeicher.Text = input1.ToString() + "-";
-                    opperator = 2;
+                    zwischenspeicher.Text = input1.ToString() + "x^y";
+                    opperator = 5;
                     eingabefeld.Text = "";
                 }
                 else
                 {
                     input1 = Convert.ToDouble(eingabefeld.Text);
-                    zwischenspeicher.Text = input1.ToString() + "-";
-                    opperator = 2;
+                    zwischenspeicher.Text = input1.ToString() + "x^y";
+                    opperator = 5;
                     eingabefeld.Text = "";
                 }
             }
