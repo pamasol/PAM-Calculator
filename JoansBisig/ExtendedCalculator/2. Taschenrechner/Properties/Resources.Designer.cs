@@ -63,6 +63,36 @@ namespace _2.Taschenrechner.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap potenzieren_taschenrechner_011 {
+            get {
+                object obj = ResourceManager.GetObject("potenzieren_taschenrechner_011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap y_hoch_x {
+            get {
+                object obj = ResourceManager.GetObject("y hoch x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap y_hoch_x1 {
+            get {
+                object obj = ResourceManager.GetObject("y hoch x1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Zurück_Zeichen {
             get {
                 object obj = ResourceManager.GetObject("Zurück-Zeichen", resourceCulture);
