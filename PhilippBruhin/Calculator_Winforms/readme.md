@@ -113,6 +113,12 @@ private void ButtonCalculate_Click(object sender, EventArgs e)
 }
 ```
 
+First, we store the values from the controls in variables to make the code more readable. We access the selected comboBox item using the `SelectedItem` property, which is of the `object` type. This means we have to convert it to `string` in our case. Similarly, we could also use just the item index using `SelectedIndex`. Since `NumericUpDown` returns the value in its `Value` property which is of the `decimal` type, we must convert it to the `double` type using the `Convert` class.
+
+For the case of zero divisor, we display a `MessageBox` using the static class of the same name and calling the `Show()` method. Finally, we display the result in `labelResult`. Unlike the console, where we could simply print the numbers, we must first convert the numbers to `string` here.
+
+You can also set the Icon property of the form (by selecting the icon file)and Text to "Pamasol Calculator".
+
 ## Run the application
 
 Run the application as shown in screenshot below by clicking **Start**.

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             this.numericUpDownInput1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownInput2 = new System.Windows.Forms.NumericUpDown();
             this.labelEqual = new System.Windows.Forms.Label();
@@ -119,6 +120,7 @@
             this.Controls.Add(this.labelEqual);
             this.Controls.Add(this.numericUpDownInput2);
             this.Controls.Add(this.numericUpDownInput1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalculatorForm";
             this.Text = "Pamasol Calculator";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInput1)).EndInit();
