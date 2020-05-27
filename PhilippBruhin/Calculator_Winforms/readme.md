@@ -21,11 +21,11 @@
 
 ## Create visual part of the form
 
-1. From the toolbox take 2x Label, 1x Button, 2x NumericUpDown and 1x ComboBox and place them on your form as shown in screenshot below.
+From the toolbox take 2x Label, 1x Button, 2x NumericUpDown and 1x ComboBox and place them on your form as shown in screenshot below.
 
 ![Winforms calculator](Documentation_Source/winforms_calculator.png)
 
-2. Name them as follows in **Properties**:
+Name them as follows in **Properties**:
     * `numericUpDownInput1` for input 1 that comes from the user
     * `numericUpDownInput2` for input 2 that comes from the user
     * `comboBoxOperation` for the operation dropdown
@@ -49,4 +49,74 @@ We recommend switching the properties from the categorized view to alphabetical 
 
 ## Code the form
 
-To be done
+We will move to the source code of the form. We already know we do this by pressing **Ctrl + Alt + 0** or by right-clicking on the form and selecting **View Code**.
+
+Inside the form constructor, below the InitializeComponents() method call, we'll set the selected item of the comboBoxOperation. To do this, we'll set the SelectedIndex property to 0, thus the first item:
+
+```csharp
+public CalculatorForm()
+{
+    InitializeComponent();
+    comboBoxOperation.SelectedIndex = 0;
+}
+```
+
+Of course, we can access all the form's items from the form.
+
+Into the constructor, we write the code that should be executed right after the form is created. When you run the app, adding will be selected as the operation (index 0).
+
+Now all we have to do is to respond to the button's click event. We'll move back from the code to the form again, then we'll double-click the button. A new method will be automatically added into the code:
+
+```csharp
+private void ButtonCalculate_Click(object sender, EventArgs e)
+{
+
+}
+```
+
+The method above will be called, when the button is clicked.
+
+Let's go back to the designer (**Shift + F7**) to select the button. In the Properties window, we can switch between properties and events using the buttons highlighted in red below:
+
+![Switch between properties and events](Documentation_Source/switching_properties_events.png)
+
+## Calculation
+
+Let's move to the calculation itself. The code won't be complicated at all. We'll simply just use conditions for the operationComboBox items and calculate the result inside the event handler of the button accordingly. Then we'll set the result as the text of resultLabel. We shouldn't forget to handle division by zero.
+
+The event handling method's code may look like this:
+
+```csharp
+private void ButtonCalculate_Click(object sender, EventArgs e)
+{
+    // Variables setup
+    string operation = comboBoxOperation.SelectedItem.ToString();
+    double number1 = Convert.ToDouble(numericUpDownInput1.Value);
+    double number2 = Convert.ToDouble(numericUpDownInput2.Value);
+    double result = 0;
+
+    // Calculation
+    if (operation == "+")
+        result = number1 + number2;
+    else if (operation == "-")
+        result = number1 - number2;
+    else if (operation == "*")
+        result = number1 * number2;
+    else if (operation == "/")
+    {
+        if (number2 != 0)
+            result = number1 / number2;
+        else
+            MessageBox.Show("You can't divide by zero");
+    }
+    labelResult.Text = result.ToString();
+}
+```
+
+## Run the application
+
+Run the application as shown in screenshot below by clicking **Start**.
+
+![Run the application](Documentation_Source/run-application.png)
+
+Ss soon as the build is successfully completed, you will find an exe file in the `bin -> Debug` folder.
