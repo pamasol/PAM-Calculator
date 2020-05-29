@@ -18,16 +18,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Button Content="Calculate" Width="80" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
-        <TextBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" Text="0" />
-        <TextBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"  Margin="0,0,10,0" Text="0" />
-        <ComboBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Margin="0,0,10,0" SelectedIndex="0">
+        <Button x:Name="calculateButton" Content="Calculate" Width="80" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Click="calculateButton_Click"/>
+        <TextBox x:Name="number1TextBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" Text="0" />
+        <TextBox x:Name="number2TextBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"  Margin="0,0,10,0" Text="0" />
+        <ComboBox x:Name="operationComboBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Margin="0,0,10,0" SelectedIndex="0">
             <ComboBoxItem Content="+"/>
             <ComboBoxItem Content="-"/>
             <ComboBoxItem Content="*"/>
             <ComboBoxItem Content="/"/>
         </ComboBox>
         <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
+        <TextBlock x:Name="resultTextBlock" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
     </Grid>
 </Window>
