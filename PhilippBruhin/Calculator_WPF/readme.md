@@ -60,7 +60,70 @@ Row definitions are done in a similar fashion. Here, the second row is exactly 3
 
 Technically, we could set everything from the Graphic designer. However, it would be a bit harder to achieve the same results and would get progressively more, and more difficult.
 
+## Adding controls
 
+Now that that's done, let's add several more elements in the Grid definition.
+
+### Button
+
+We'll start out by adding a button:
+
+```yaml
+<Button Content="Calculate" Width="80" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+```
+
+Here, we have set the button's width to 80 DIP, its vertical alignment to center, and set the text label using the Content attribute. We don't need to set the horizontal alignment once a fixed width has been specified, the button will be centered horizontally.
+
+The attributes that matter most to us in this case, are the `Grid.Row` and the `Grid.Column` attributes. What they do is indicate precisely where we want the control to be inserted (which cell the control should be inserted into). As always, the index starts from zero (meaning that the "first row" is actually the "0th" row).
+
+### TextBox
+
+A TextBox is a field used for text input. Our application needs two of them, so we will need to add the following code to the grid:
+
+```yaml
+<TextBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" Text="0" />
+<TextBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"  Margin="0,0,10,0" Text="0" />
+```
+
+Keep in mind that we inserted the TextBoxes into the first Grid row, whose height stretches along with the form. In order to keep things looking good, we'll have to center them vertically. We'll set the right margins to 10 DIP and the texts to 0 (which is the default input value of almost all calculators). Also, don't forget to enter the grid cell's coordinates correctly.
+
+Just so you know, in order to enter multi-line text you would have to add these two attributes to the TextBox (we won't be using it on our calculator):
+
+```yaml
+TextWrapping="Wrap" AcceptsReturn="True"
+```
+
+### ComboBox
+
+A ComboBox is a drop-down list of several items. In this application, we'll use it to choose from a set of predefined operations, i.e. +, -, *, /.
+
+Our combobox will be defined as follows:
+
+```yaml
+<ComboBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Margin="0,0,10,0" SelectedIndex="0">
+        <ComboBoxItem Content="+"/>
+        <ComboBoxItem Content="-"/>
+        <ComboBoxItem Content="*"/>
+        <ComboBoxItem Content="/"/>
+</ComboBox>
+```
+
+The `SelectedIndex` is the index of all of the selected items, which in our case is the first. Individual items are nested in the `ComboBox` as `ComboBoxItem` elements. We use the content attribute to set their text label. As a matter of fact, you can insert almost anything in there, be it images, colors, or whatever it is you need.
+
+### TextBlock
+
+The last couple of things we are going to add to our calculator today are TextBlocks (which we are already familiar with):
+
+```yaml
+<TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
+<TextBlock Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
+```
+
+The first `TextBlock` is the "equals" sign between the second number and the result, the second one holds the result.
+
+Done! Don't forget to resize it to make sure the relative positioning parts function properly! All of the controls should adapt beautifully regardless of the window size.
+
+![Run the application](Documentation_Source/wpf-controls.png)
 
 ## Run the application
 
