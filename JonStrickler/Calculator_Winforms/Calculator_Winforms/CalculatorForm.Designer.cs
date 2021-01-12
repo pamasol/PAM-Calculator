@@ -117,7 +117,7 @@ namespace Calculator_Winforms
             this.Controls.Add(this.labelResult);
             this.Controls.Add(this.labelEqual);
             this.Name = "CalculatorForm";
-            this.Text = "Form1";
+            this.Text = "Pamasol Calculator";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInput2)).EndInit();
             this.ResumeLayout(false);
