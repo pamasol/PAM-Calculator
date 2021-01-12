@@ -17,8 +17,6 @@
 
 ![Create Winforms App](Documentation_Source/visual_studio_workspace.png)
 
-6. Rename `Form1.cs` to `CalculatorForm.cs` in the **Solution Explorer** as shown in the screenshot above in green.
-
 ## Create the grid
 
 Let's move to the graphic designer and click on the middle of the window. This selects its inner parts which, in most cases, is the Grid. Every new window contains a Grid by default, without it, it would be very difficult to add multiple elements to a window. When we select the Grid, "rails" appear over the top and left edges. We can select a point there using the mouse and split it up into rows or columns (at the position in which you clicked). Now that that's been said, create a table of 2 rows and 5 columns. We'll add form controls to the table cells later on.
