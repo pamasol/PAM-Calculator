@@ -53,9 +53,8 @@ namespace Calculator_Winforms
             this.labelResult.AutoSize = true;
             this.labelResult.Location = new System.Drawing.Point(506, 169);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(51, 20);
+            this.labelResult.Size = new System.Drawing.Size(0, 20);
             this.labelResult.TabIndex = 1;
-            this.labelResult.Text = "label2";
             // 
             // buttonCalculate
             // 
