@@ -34,7 +34,7 @@ namespace Calculator_Winforms
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.numericUpDownInput1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownInput2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBoxOperartion = new System.Windows.Forms.ComboBox();
+            this.comboBoxOperation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInput2)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,7 @@ namespace Calculator_Winforms
             this.buttonCalculate.TabIndex = 2;
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // numericUpDownInput1
             // 
@@ -92,25 +93,25 @@ namespace Calculator_Winforms
             this.numericUpDownInput2.Size = new System.Drawing.Size(120, 26);
             this.numericUpDownInput2.TabIndex = 4;
             // 
-            // comboBoxOperartion
+            // comboBoxOperation
             // 
-            this.comboBoxOperartion.FormattingEnabled = true;
-            this.comboBoxOperartion.Items.AddRange(new object[] {
+            this.comboBoxOperation.FormattingEnabled = true;
+            this.comboBoxOperation.Items.AddRange(new object[] {
             "+",
             "-",
             "*",
             "/"});
-            this.comboBoxOperartion.Location = new System.Drawing.Point(213, 166);
-            this.comboBoxOperartion.Name = "comboBoxOperartion";
-            this.comboBoxOperartion.Size = new System.Drawing.Size(121, 28);
-            this.comboBoxOperartion.TabIndex = 5;
+            this.comboBoxOperation.Location = new System.Drawing.Point(213, 166);
+            this.comboBoxOperation.Name = "comboBoxOperation";
+            this.comboBoxOperation.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxOperation.TabIndex = 5;
             // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBoxOperartion);
+            this.Controls.Add(this.comboBoxOperation);
             this.Controls.Add(this.numericUpDownInput2);
             this.Controls.Add(this.numericUpDownInput1);
             this.Controls.Add(this.buttonCalculate);
@@ -132,7 +133,7 @@ namespace Calculator_Winforms
         private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.NumericUpDown numericUpDownInput1;
         private System.Windows.Forms.NumericUpDown numericUpDownInput2;
-        private System.Windows.Forms.ComboBox comboBoxOperartion;
+        private System.Windows.Forms.ComboBox comboBoxOperation;
     }
 }
 
