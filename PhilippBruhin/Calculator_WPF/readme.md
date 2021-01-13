@@ -123,10 +123,86 @@ Done! Don't forget to resize it to make sure the relative positioning parts func
 
 ![Run the application](Documentation_Source/wpf-controls.png)
 
+## Adding the logic
+
+Up to this point we have created the visual user interface. If you would run the application now and click on the "Calculate" button nothing will happen. What's missing is the event handler for the button. 
+To modify the grid elements we have to add name attributes to the grid definitions. For example the result `TextBox` can be named as `labelResult` like this:
+```yaml
+<TextBlock Name="labelResult"  Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
+```
+In the event handler method we can now set the `labelResult.Text` property to update the final calculator result.
+
+We need to add names to all grid fields with dynamic content. The final XAML code should look similar to this:
+
+```yaml
+<Window x:Name="PamasolCalculator" x:Class="Calculator_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_WPF"
+        mc:Ignorable="d"
+        Title="Pamasol Calculator" Height="134" Width="388" MinWidth="388" MinHeight="134">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Button Content="Calculate" Width="80" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Click="Button_Click"/>
+        <TextBox Name="numericUpDownInput1" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" Text="0" />
+        <TextBox Name="numericUpDownInput2" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"  Margin="0,0,10,0" Text="0" />
+        <ComboBox Name="comboBoxOperation" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Margin="0,0,10,0" SelectedIndex="0">
+            <ComboBoxItem Content="+"/>
+            <ComboBoxItem Content="-"/>
+            <ComboBoxItem Content="*"/>
+            <ComboBoxItem Content="/"/>
+        </ComboBox>
+        <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">=</TextBlock>
+        <TextBlock Name="labelResult"  Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">0</TextBlock>
+    </Grid>
+</Window>
+```
+
+The event handling method's code may look like this:
+
+```csharp
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+        // Variables setup
+        string operation = comboBoxOperation.Text;
+        double number1 = Convert.ToDouble(numericUpDownInput1.Text);
+        double number2 = Convert.ToDouble(numericUpDownInput2.Text);
+        double result = 0;
+
+        // Calculation
+        if (operation == "+")
+        result = number1 + number2;
+        else if (operation == "-")
+        result = number1 - number2;
+        else if (operation == "*")
+        result = number1 * number2;
+        else if (operation == "/")
+        {
+        if (number2 != 0)
+                result = number1 / number2;
+        else
+                MessageBox.Show("You can't divide by zero");
+        }
+        labelResult.Text = result.ToString();
+}
+```
+
 ## Run the application
 
 Run the application as shown in screenshot below by clicking **Start**.
 
 ![Run the application](Documentation_Source/run-application.png)
 
-Ss soon as the build is successfully completed, you will find an exe file in the `bin -> Debug` folder.
+As soon as the build is successfully completed, you will find an exe file in the `bin -> Debug` folder.
