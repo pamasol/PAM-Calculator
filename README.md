@@ -26,4 +26,4 @@ You will build the same calculator twice. In a first step you will work with the
 
 2. [Calculator Tutorial WPF](https://github.com/pamasol/PAM-Calculator/tree/master/PhilippBruhin/Calculator_WPF/readme.md)
 
-Have fun :rocket:
+At the end you will have built your own calculator (`*.exe` file) that can be executed on every Windows machine. Have fun :rocket:
