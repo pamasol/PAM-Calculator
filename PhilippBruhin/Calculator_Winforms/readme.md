@@ -49,7 +49,7 @@ We recommend switching the properties from the categorized view to alphabetical 
 
 ## Code the form
 
-We will move to the source code of the form. We already know we do this by pressing **Ctrl + Alt + 0** or by right-clicking on the form and selecting **View Code**.
+We will move to the source code of the form. We already know we do this by pressing **F7** or by right-clicking on the form and selecting **View Code**.
 
 Inside the form constructor, below the InitializeComponents() method call, we'll set the selected item of the comboBoxOperation. To do this, we'll set the SelectedIndex property to 0, thus the first item:
 
