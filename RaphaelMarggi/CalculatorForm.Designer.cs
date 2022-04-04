@@ -84,6 +84,11 @@
             // comboBoxOperation
             // 
             this.comboBoxOperation.FormattingEnabled = true;
+            this.comboBoxOperation.Items.AddRange(new object[] {
+            "+",
+            "-",
+            "*",
+            "/"});
             this.comboBoxOperation.Location = new System.Drawing.Point(458, 263);
             this.comboBoxOperation.Name = "comboBoxOperation";
             this.comboBoxOperation.Size = new System.Drawing.Size(120, 32);

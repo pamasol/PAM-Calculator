@@ -27,7 +27,25 @@ namespace Rafe_Calc
         {
             //Variables setup
             string operation = comboBoxOperation.SelectedItem.ToString();
-            double number1
+            double number1 = Convert.ToDouble(numericUpDown1.Value);
+            double number2 = Convert.ToDouble(numericUpDown2.Value);
+            double result = 0;
+
+            //Calculation
+            if (operation == "+")
+                result = number1 + number2;
+            else if (operation == "-")
+                result = number1 - number2;
+            else if (operation == "*")
+                result = number1 * number2;
+            else if (operation == "/")
+            {
+                if (number2 != 0)
+                    result = number1 / number2;
+                else
+                    MessageBox.Show("You can`t divide by zero");
+            }
+            labelResult.Text = result.ToString();
         }
     }
 }
